@@ -1,0 +1,24 @@
+<nav id="main-nav">
+  <a class="logo" href="/" id="logo-tap">
+    <div class="logo-mark">S</div>
+    Sanyu <em>&nbsp;Enterprises</em>
+  </a>
+  
+  <div class="nav-right">
+    <a href="/catalog" class="nav-pill nav-pill-ghost">Shop</a>
+    
+    <a href="/cart" class="nav-pill nav-pill-ghost">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+      </svg>
+      Cart
+      <div id="cart-count" class="cart-badge" style="display: none;">0</div>
+    </a>
+    
+    <% if (isAdmin) { %>
+      <a href="/admin" class="nav-pill nav-pill-gold">Dashboard</a>
+      <a href="/logout" class="nav-pill nav-pill-danger">Logout</a>
+    <% } %>
+  </div>
+</nav>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+  <%- include('partials/nav') %>
+  
+  <main>
+    <section class="section-padding" style="padding-top: 120px;">
+      <div class="section-header" style="flex-direction: column; align-items: flex-start; gap: 24px;">
+        <div style="width: 100%; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div class="section-label">Full Collection</div>
+            <h1 class="section-title">Our <span>Products</span></h1>
+          </div>
+          <div class="section-meta">
+            <span class="count-badge"><%= products.length %> items</span>
+          </div>
+        </div>
+        
+        <form action="/catalog" method="GET" class="filters-bar" style="width: 100%;">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" name="search" placeholder="Search products..." value="<%= currentSearch %>">
+          </div>
+          
+          <select name="category" class="filter-select" onchange="this.form.submit()">
+            <option value="all" <%= currentCategory === 'all' ? 'selected' : '' %>>All Categories</option>
+            <% categories.forEach(cat => { %>
+              <option value="<%= cat %>" <%= currentCategory === cat ? 'selected' : '' %>><%= cat %></option>
+            <% }) %>
+          </select>
+          
+          <select name="sort" class="filter-select" onchange="this.form.submit()">
+            <option value="newest" <%= currentSort === 'newest' ? 'selected' : '' %>>Newest Arrivals</option>
+            <option value="price-asc" <%= currentSort === 'price-asc' ? 'selected' : '' %>>Price: Low to High</option>
+            <option value="price-desc" <%= currentSort === 'price-desc' ? 'selected' : '' %>>Price: High to Low</option>
+            <option value="name" <%= currentSort === 'name' ? 'selected' : '' %>>Name: A-Z</option>
+          </select>
+          
+          <button type="submit" style="display: none;">Apply</button>
+        </form>
+      </div>
+
+      <div class="product-grid">
+        <% if (products.length === 0) { %>
+          <div class="empty-state">
+            <div class="empty-state-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="32" height="32">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <h3>No results found</h3>
+            <p>Try adjusting your search or filter criteria to find what you're looking for.</p>
+            <a href="/catalog" class="btn-hero-secondary" style="margin-top: 10px;">Clear Filters</a>
+          </div>
+        <% } else { %>
+          <% products.forEach(p => { %>
+            <a href="/product/<%= p.id %>" class="product-card">
+              <div class="product-img-wrap">
+                <% if (p.image_url) { %>
+                  <img src="<%= p.image_url %>" alt="<%= p.name %>" loading="lazy">
+                <% } else { %>
+                  <div class="product-img-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="36" height="36" style="opacity:0.2">
+                      <rect x="3" y="3" width="18" height="18" rx="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                  </div>
+                <% } %>
+                <div class="product-category-pill"><%= p.category %></div>
+              </div>
+              <div class="product-body">
+                <div class="product-name"><%= p.name %></div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="product-price-currency">INR</span>
+                    <%= Number(p.price).toLocaleString('en-IN') %>
+                  </div>
+                  <button type="button" class="add-cart-btn" onclick="event.preventDefault(); addToCart(<%= p.id %>, '<%= p.name.replace(/'/g, "\\'") %>', <%= p.price %>, '<%= p.image_url || '' %>')">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </a>
+          <% }) %>
+        <% } %>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
