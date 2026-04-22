@@ -76,9 +76,14 @@
                     <span class="product-price-currency">INR</span>
                     <%= Number(p.price).toLocaleString('en-IN') %>
                   </div>
-                  <button type="button" class="add-cart-btn" onclick="event.preventDefault(); addToCart(<%= p.id %>, '<%= p.name.replace(/'/g, "\\'") %>', <%= p.price %>, '<%= p.image_url || '' %>')">
-                    Add
-                  </button>
+                  <div style="display:flex; gap: 6px;">
+                    <button type="button" class="add-cart-btn" style="background: var(--gold); color: #000; border-color: var(--gold); padding: 9px 14px;" onclick="event.preventDefault(); buyNow(<%= p.id %>, '<%= p.name.replace(/'/g, "\\'") %>', <%= p.price %>, '<%= p.image_url || '' %>')">
+                      Buy
+                    </button>
+                    <button type="button" class="add-cart-btn" style="padding: 9px 14px;" onclick="event.preventDefault(); addToCart(<%= p.id %>, '<%= p.name.replace(/'/g, "\\'") %>', <%= p.price %>, '<%= p.image_url || '' %>')">
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
             </a>

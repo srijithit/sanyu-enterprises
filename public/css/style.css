@@ -396,12 +396,44 @@ footer {
 }
 
 /* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .hero-title { font-size: 3.5rem; }
+  .hero-subtitle { max-width: 100%; }
+}
+
 @media (max-width: 768px) {
-  nav { padding: 0 20px; }
-  .hero { padding: 60px 24px; min-height: unset; }
+  nav { padding: 0 16px; height: 60px; }
+  nav::after { left: 16px; right: 16px; }
+  .logo { font-size: 1.1rem; }
+  .logo em { display: none; } /* Hide 'Enterprises' on mobile */
+  
+  .nav-right { gap: 4px; }
+  .nav-pill { padding: 6px 12px; font-size: 0.7rem; }
+  .nav-pill-text { display: none; } /* Hide text in pills, icons only */
+  
+  .hero { padding: 80px 20px 40px; min-height: unset; text-align: center; }
+  .hero-content { margin: 0 auto; }
+  .hero-eyebrow { justify-content: center; margin-bottom: 20px; }
+  .hero-title { font-size: 3rem; margin-bottom: 20px; }
+  .hero-subtitle { margin: 0 auto 32px; font-size: 0.85rem; }
+  .hero-actions { justify-content: center; gap: 12px; }
   .hero-stat-row { display: none; }
-  .section-padding { padding: 40px 24px; }
-  .section-header { padding: 0 0 28px; }
-  .product-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1px; }
-  footer { padding: 28px 24px; }
+  
+  .section-padding { padding: 48px 20px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .section-title { font-size: 2.2rem; }
+  
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .product-body { padding: 14px; }
+  .product-name { font-size: 1.1rem; }
+  .product-price { font-size: 1.2rem; }
+  .add-cart-btn { padding: 8px 12px; font-size: 0.65rem; }
+  
+  footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 2.5rem; }
+  .btn-hero-primary { width: 100%; justify-content: center; }
 }

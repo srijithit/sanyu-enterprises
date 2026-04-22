@@ -33,6 +33,16 @@ function addToCart(id, name, price, image) {
 }
 
 // ─── INIT ───
+function buyNow(id, name, price, image) {
+  // Check if item already exists to avoid duplicate count if we just want to go to checkout
+  const existing = cart.find(i => i.id === id);
+  if (!existing) {
+    cart.push({ id, name, price, image, quantity: 1 });
+    saveCart();
+  }
+  window.location.href = '/cart';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   updateCartBadge();
   
