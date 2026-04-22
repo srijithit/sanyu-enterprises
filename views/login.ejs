@@ -9,15 +9,15 @@
 }
 .login-page::before {
   content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%;
-  background: linear-gradient(135deg, transparent 0%, rgba(200,150,12,0.05) 100%); pointer-events: none;
+  background: linear-gradient(135deg, transparent 0%, rgba(249, 115, 22,0.05) 100%); pointer-events: none;
 }
 .login-container {
   width: 100%; max-width: 420px; padding: 20px; position: relative; z-index: 1;
 }
 .login-card {
-  background: var(--dark-2); border: 1px solid rgba(200,150,12,0.18);
+  background: var(--dark-2); border: 1px solid rgba(249, 115, 22,0.18);
   border-radius: var(--radius-lg); padding: 52px 44px;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(200,150,12,0.05);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(249, 115, 22,0.05);
 }
 .login-logo {
   display: flex; align-items: center; gap: 10px; margin-bottom: 36px; text-decoration: none;
@@ -56,8 +56,8 @@
   outline: none; transition: all 0.2s; letter-spacing: 0.3em; text-align: center;
 }
 .field input:focus {
-  border-color: rgba(200,150,12,0.5); background: var(--dark-4);
-  box-shadow: 0 0 0 3px rgba(200,150,12,0.08);
+  border-color: rgba(249, 115, 22,0.5); background: var(--dark-4);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22,0.08);
 }
 .login-footer-link {
   margin-top: 20px; text-align: center; font-size: 0.75rem; color: var(--text-muted);
@@ -68,7 +68,7 @@
   <div class="login-container">
     <div class="login-card">
       <a href="/" class="login-logo">
-        <div class="login-logo-mark">S</div>
+        <img src="/images/logo.png" alt="Sanyu Logo" style="width: 36px; height: 36px;">
         <div class="login-logo-name">Sanyu Enterprises</div>
       </a>
       <h2 class="login-title">Admin Access</h2>

@@ -26,19 +26,19 @@
 .stat-card-val { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cream); line-height: 1; }
 
 .add-card {
-  background: var(--dark-2); border: 1px solid rgba(200,150,12,0.14);
+  background: var(--dark-2); border: 1px solid rgba(249, 115, 22,0.14);
   border-radius: var(--radius-lg); padding: 36px 40px; margin-bottom: 52px; position: relative; overflow: hidden;
 }
 .add-card::before {
   content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px;
-  background: radial-gradient(circle at top right, rgba(200,150,12,0.06) 0%, transparent 70%); pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(249, 115, 22,0.06) 0%, transparent 70%); pointer-events: none;
 }
 .add-card-header {
   display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .add-card-icon {
-  width: 40px; height: 40px; background: rgba(200,150,12,0.12);
-  border: 1px solid rgba(200,150,12,0.2); border-radius: var(--radius);
+  width: 40px; height: 40px; background: rgba(249, 115, 22,0.12);
+  border: 1px solid rgba(249, 115, 22,0.2); border-radius: var(--radius);
   display: flex; align-items: center; justify-content: center; color: var(--gold);
 }
 .add-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--cream); }
@@ -51,19 +51,19 @@
   width: 100%; padding: 12px 16px; background: var(--dark-3); border: 1px solid rgba(255,255,255,0.07);
   border-radius: var(--radius-sm); color: var(--text); font-family: 'Syne', sans-serif; font-size: 0.88rem; outline: none; transition: all 0.2s;
 }
-.field input:focus, .field textarea:focus { border-color: rgba(200,150,12,0.5); background: var(--dark-4); }
+.field input:focus, .field textarea:focus { border-color: rgba(249, 115, 22,0.5); background: var(--dark-4); }
 
 .checkbox-wrap { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
 .checkbox-wrap input[type=checkbox] { width: auto; }
 
 .img-upload-zone {
-  border: 1px dashed rgba(200,150,12,0.25); border-radius: var(--radius); background: var(--dark-3);
+  border: 1px dashed rgba(249, 115, 22,0.25); border-radius: var(--radius); background: var(--dark-3);
   padding: 30px 20px; text-align: center; cursor: pointer; transition: all 0.2s; position: relative;
   min-height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
 }
-.img-upload-zone:hover { border-color: rgba(200,150,12,0.5); background: rgba(200,150,12,0.04); }
+.img-upload-zone:hover { border-color: rgba(249, 115, 22,0.5); background: rgba(249, 115, 22,0.04); }
 .img-upload-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
-.upload-icon { width: 40px; height: 40px; background: rgba(200,150,12,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+.upload-icon { width: 40px; height: 40px; background: rgba(249, 115, 22,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); }
 .upload-label { font-size: 0.78rem; color: var(--text-dim); font-weight: 500; }
 .img-preview-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: var(--radius); display: none; border: 1px solid rgba(255,255,255,0.1); }
 
@@ -80,7 +80,7 @@
 .table-img { width: 48px; height: 48px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.07); }
 .action-btns { display: flex; gap: 6px; }
 .action-btn { padding: 5px 13px; border-radius: var(--radius-sm); font-size: 0.7rem; font-weight: 700; cursor: pointer; border: none; font-family: 'Syne', sans-serif; text-transform: uppercase; }
-.edit-btn { background: rgba(200,150,12,0.1); color: var(--gold-light); border: 1px solid rgba(200,150,12,0.22); }
+.edit-btn { background: rgba(249, 115, 22,0.1); color: var(--gold-light); border: 1px solid rgba(249, 115, 22,0.22); }
 .del-btn { background: rgba(201,64,64,0.08); color: #c47070; border: 1px solid rgba(201,64,64,0.2); }
 
 /* ═══ MODALS ═══ */
@@ -89,7 +89,7 @@
 }
 .modal-backdrop.open { display: flex; }
 .modal {
-  background: var(--dark-2); border: 1px solid rgba(200,150,12,0.18); border-radius: var(--radius-lg); padding: 40px; width: 100%; max-width: 520px; box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+  background: var(--dark-2); border: 1px solid rgba(249, 115, 22,0.18); border-radius: var(--radius-lg); padding: 40px; width: 100%; max-width: 520px; box-shadow: 0 40px 120px rgba(0,0,0,0.8);
 }
 .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--cream); margin-bottom: 24px; }
 .modal-actions { display: flex; gap: 12px; margin-top: 28px; }
@@ -226,7 +226,7 @@
                   <div style="font-weight: 600; color: var(--cream);"><%= p.name %></div>
                   <div style="font-size: 0.73rem; color: var(--text-muted); max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= p.description %></div>
                 </td>
-                <td><span style="display:inline-block;padding:2px 10px;background:rgba(200,150,12,0.08);border:1px solid rgba(200,150,12,0.15);border-radius:40px;font-size:0.68rem;color:var(--gold-light);"><%= p.category %></span></td>
+                <td><span style="display:inline-block;padding:2px 10px;background:rgba(249, 115, 22,0.08);border:1px solid rgba(249, 115, 22,0.15);border-radius:40px;font-size:0.68rem;color:var(--gold-light);"><%= p.category %></span></td>
                 <td><span style="font-size: 0.6rem; color: var(--text-muted);">INR</span> <span style="color: var(--gold-light); font-weight: 700;"><%= Number(p.price).toLocaleString('en-IN') %></span></td>
                 <td><%= p.featured ? 'Yes' : 'No' %></td>
                 <td style="font-size: 0.72rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;"><%= new Date(p.created_at).toLocaleDateString() %></td>

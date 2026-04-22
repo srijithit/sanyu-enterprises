@@ -1,8 +1,8 @@
 :root {
-  --gold: #C8960C;
-  --gold-light: #E8B830;
-  --gold-bright: #F5CE5A;
-  --gold-dim: rgba(200,150,12,0.15);
+  --gold: #F97316;
+  --gold-light: #FB923C;
+  --gold-bright: #FDBA74;
+  --gold-dim: rgba(249, 115, 22, 0.15);
   --dark: #080808;
   --dark-2: #101010;
   --dark-3: #181818;
@@ -56,13 +56,13 @@ nav {
   padding: 0 48px;
   background: rgba(8,8,8,0.85);
   backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(200,150,12,0.12);
+  border-bottom: 1px solid rgba(249, 115, 22,0.12);
 }
 
 nav::after {
   content: '';
   position: absolute; bottom: 0; left: 48px; right: 48px; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200,150,12,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22,0.3), transparent);
 }
 
 .logo {
@@ -103,11 +103,11 @@ nav::after {
 
 .nav-pill-gold {
   background: var(--gold); color: #000;
-  box-shadow: 0 0 20px rgba(200,150,12,0.3);
+  box-shadow: 0 0 20px rgba(249, 115, 22,0.3);
 }
 .nav-pill-gold:hover {
   background: var(--gold-bright);
-  box-shadow: 0 0 30px rgba(200,150,12,0.5);
+  box-shadow: 0 0 30px rgba(249, 115, 22,0.5);
 }
 
 .cart-badge {
@@ -137,12 +137,12 @@ main { flex: 1; padding-top: 64px; }
 }
 .hero-bg-circle:nth-child(1) {
   width: 600px; height: 600px; top: -100px; right: -100px;
-  background: radial-gradient(circle, rgba(200,150,12,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 115, 22,0.12) 0%, transparent 70%);
   animation-delay: 0s;
 }
 .hero-bg-circle:nth-child(2) {
   width: 400px; height: 400px; bottom: -50px; left: 20%;
-  background: radial-gradient(circle, rgba(200,150,12,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 115, 22,0.06) 0%, transparent 70%);
   animation-delay: -4s;
 }
 
@@ -154,8 +154,8 @@ main { flex: 1; padding-top: 64px; }
 .hero-grid-lines {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(200,150,12,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,150,12,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(249, 115, 22,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22,0.03) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
@@ -190,11 +190,11 @@ main { flex: 1; padding-top: 64px; }
   font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   cursor: pointer; border: none; text-decoration: none; transition: all 0.25s;
-  box-shadow: 0 8px 32px rgba(200,150,12,0.25);
+  box-shadow: 0 8px 32px rgba(249, 115, 22,0.25);
 }
 .btn-hero-primary:hover {
   background: var(--gold-bright); transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(200,150,12,0.4);
+  box-shadow: 0 12px 40px rgba(249, 115, 22,0.4);
 }
 
 .btn-hero-secondary {
@@ -260,11 +260,11 @@ main { flex: 1; padding-top: 64px; }
 }
 .product-card::before {
   content: ''; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(200,150,12,0.06) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(249, 115, 22,0.06) 0%, transparent 60%);
   opacity: 0; transition: opacity 0.3s; pointer-events: none;
 }
 .product-card:hover::before { opacity: 1; }
-.product-card:hover { border-color: rgba(200,150,12,0.25); }
+.product-card:hover { border-color: rgba(249, 115, 22,0.25); }
 
 .product-img-wrap {
   width: 100%; aspect-ratio: 4/3; background: var(--dark-3);
@@ -287,7 +287,7 @@ main { flex: 1; padding-top: 64px; }
 .product-category-pill {
   position: absolute; top: 14px; left: 14px; z-index: 2;
   background: rgba(8,8,8,0.8); backdrop-filter: blur(8px);
-  border: 1px solid rgba(200,150,12,0.2); padding: 3px 10px; border-radius: 40px;
+  border: 1px solid rgba(249, 115, 22,0.2); padding: 3px 10px; border-radius: 40px;
   font-size: 0.65rem; font-weight: 600; color: var(--gold-light);
   letter-spacing: 0.1em; text-transform: uppercase;
 }
@@ -319,14 +319,14 @@ main { flex: 1; padding-top: 64px; }
 
 .add-cart-btn {
   display: inline-flex; align-items: center; gap: 7px;
-  background: transparent; border: 1px solid rgba(200,150,12,0.3);
+  background: transparent; border: 1px solid rgba(249, 115, 22,0.3);
   color: var(--gold-light); padding: 9px 18px; border-radius: 4px;
   font-family: 'Syne', sans-serif; font-size: 0.74rem; font-weight: 700;
   letter-spacing: 0.06em; text-transform: uppercase;
   cursor: pointer; transition: all 0.2s; position: relative; z-index: 2;
 }
 .add-cart-btn:hover {
-  background: rgba(200,150,12,0.1); border-color: var(--gold);
+  background: rgba(249, 115, 22,0.1); border-color: var(--gold);
   transform: translateY(-1px);
 }
 
@@ -389,10 +389,10 @@ footer {
   border: none; border-radius: var(--radius-sm); text-decoration: none;
   font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 800;
   letter-spacing: 0.1em; text-transform: uppercase;
-  cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 24px rgba(200,150,12,0.2);
+  cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 24px rgba(249, 115, 22,0.2);
 }
 .btn-primary:hover {
-  background: var(--gold-bright); box-shadow: 0 12px 32px rgba(200,150,12,0.35); transform: translateY(-1px);
+  background: var(--gold-bright); box-shadow: 0 12px 32px rgba(249, 115, 22,0.35); transform: translateY(-1px);
 }
 
 /* ═══ RESPONSIVE ═══ */
