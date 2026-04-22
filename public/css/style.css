@@ -336,7 +336,7 @@ main { flex: 1; padding-top: 64px; }
 }
 .search-box {
   display: flex; align-items: center; background: var(--dark-2);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm);
   padding: 0 16px; flex: 1; min-width: 250px;
 }
 .search-box input {
