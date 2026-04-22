@@ -9,6 +9,12 @@ const { Pool } = require('pg');
 const app = express();
 
 // ─── DATABASE ───
+if (!process.env.DATABASE_URL) {
+  console.error('❌ ERROR: DATABASE_URL is not defined in environment variables!');
+} else {
+  console.log('✅ DATABASE_URL is defined.');
+}
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
@@ -66,6 +72,9 @@ const upload = multer({
 
 // ─── HELPER: Upload to Vercel Blob ───
 async function uploadToBlob(file) {
+  if (!process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_READ_WRITE_TOKEN.includes('your_token_here')) {
+    throw new Error('Vercel Blob Token is missing or invalid in .env');
+  }
   try {
     const blob = await put(file.originalname, file.buffer, {
       access: 'public',
@@ -74,7 +83,7 @@ async function uploadToBlob(file) {
     return blob.url;
   } catch (err) {
     console.error('Blob upload error:', err.message);
-    return null;
+    throw err;
   }
 }
 
