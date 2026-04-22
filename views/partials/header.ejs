@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title><%= typeof title !== 'undefined' ? title : 'Sanyu Enterprises' %></title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav id="main-nav">
+  <a class="logo" href="/">
+    <div class="logo-mark">S</div>
+    Sanyu <em>&nbsp;Enterprises</em>
+  </a>
+  <div class="nav-right">
+    <a href="/" class="nav-pill nav-pill-ghost">Home</a>
+    <a href="/catalog" class="nav-pill nav-pill-ghost">Shop</a>
+    <a href="/cart" class="nav-pill nav-pill-ghost cart-link">Cart <span class="cart-badge" id="cart-badge">0</span></a>
+    <% if (typeof isAdmin !== 'undefined' && isAdmin) { %>
+      <a href="/admin" class="nav-pill nav-pill-gold">Dashboard</a>
+      <a href="/logout" class="nav-pill nav-pill-danger">Logout</a>
+    <% } %>
+  </div>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="document.getElementById('main-nav').classList.toggle('nav-open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
