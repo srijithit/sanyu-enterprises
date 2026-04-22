@@ -30,6 +30,7 @@ pool.query(`
 `).catch(err => console.error('DB init error:', err.message));
 
 // ─── MIDDLEWARE ───
+app.set('trust proxy', 1); // Trust Vercel edge proxy for secure cookies
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
